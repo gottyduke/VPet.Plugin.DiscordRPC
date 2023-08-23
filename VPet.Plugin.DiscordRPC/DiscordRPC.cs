@@ -120,16 +120,16 @@ namespace VPet.Plugin.DiscordRPC
             LocalizeCore.LoadDefaultCulture();
         }
 
-        private string _RPCID => "1143326257833070664";
+        private readonly string _RPCID = "1143326257833070664";
         private RichPresence _RichPresence;
-        private string[] _ImageKey = {
+        private readonly string[] _ImageKey = {
             "vpet_large_think",
             "vpet_large_work",
             "vpet_large_nap",
             "vpet_large_travel",
             "vpet_large_idle",
         };
-        private string[] _WorkImageKey = {
+        private readonly string[] _WorkImageKey = {
             "vpet_large_work",
             "vpet_large_study",
             "vpet_large_game",

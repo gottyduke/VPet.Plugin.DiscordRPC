@@ -1,83 +1,65 @@
-# BG3_PluginTemplate
- Native dll plugin template for Baldur's Gate 3. 
-
-## Requirements
-
-- [CMake](https://cmake.org/)
-  - Add this to your `PATH`
-- [PowerShell](https://github.com/PowerShell/PowerShell/releases/latest)
-- [Vcpkg](https://github.com/microsoft/vcpkg)
-  - Add the environment variable `VCPKG_ROOT` with the value as the path to the folder containing vcpkg
-- [Visual Studio Community 2022](https://visualstudio.microsoft.com/)
-  - Desktop development with C++
-- [Baldur's Gate 3 Steam Distribution](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/)
-  - Add the environment variable `BG3PATH` with the value as path to game install folder
-  
-## Register Visual Studio as a Generator
-
-- Open `x64 Native Tools Command Prompt`
-- Run `cmake`
-- Close the cmd window
-
-## Building
-
-```
-git clone https://github.com/gottyduke/BG3_PluginTemplate.git
-cd BG3_PluginTemplate
-git submodule init
-git submodule update
-.\build-release.ps1
-```
-
-## License
-
-[MIT](LICENSE)
-
-## Credits
-
-- [Kassent's NativeModLoader](https://www.nexusmods.com/divinityoriginalsin2/mods/210?tab=description)([GitHub](https://github.com/kassent/DLLPluginLoader))
-- [Ryan for his commonLibSSE code](https://github.com/Ryan-rsm-McKenzie/CommonLibSSE) which was referenced in DKUtil.
+# VPet.Plugin.DiscordRPC
+ 为 [VPet](https://github.com/LorisYounger/VPet) 启用 discord rich presence.
 
 
----
+## 示例
+![slacking](static/assets/slacking.png)
+![idling](static/assets/idling.png)
+![cosmos](static/assets/cosmos.png)
+> Supports English locale.
 
 
-# BG3_PluginTemplate
- 用于《博德之门3》的插件模板。
+## 动画版权声明与授权
+
+在github中 [桌宠动画文件](https://github.com/LorisYounger/VPet/tree/main/VPet-Simulator.Windows/mod/0000_core/pet/vup) 动画版权归 [虚拟主播模拟器制作组](https://www.exlb.net/VUP-Simulator)所有, 本插件使用个别差分图均非商业用途, 所有版权归如上归属.
+
 
 ## 需求
-
-- [CMake](https://cmake.org/)
-  - 把这个添加到你的`PATH`
-- [PowerShell](https://github.com/PowerShell/PowerShell/releases/latest)
-- [Vcpkg](https://github.com/microsoft/vcpkg)
-  - 用`VCPKG_ROOT`设置环境变量，并把包含vcpkg的文件夹路径作为值
 - [Visual Studio Community 2022](https://visualstudio.microsoft.com/)
-  - 带有C++的桌面开发
-- [Baldur's Gate 3 Steam Distribution](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/)
-  - 用`BG3PATH`设置环境变量，并把steam版本游戏安装文件夹路径作为值
+  - 带有.Net Framework/CSharp的桌面开发
 
-## 将Visual Studio注册为生成器
-
-- 打开`x64 Native Tools Command Prompt`
-- 运行`cmake`
-- 关闭cmd窗口
 
 ## 构建
+本插件移除了原Demo项目推荐的nuget包, 因为其与上流[VPet_Simulator.Core](https://github.com/LorisYounger/VPet/tree/main/VPet-Simulator.Core)相比存在更新脱节, 构建时需要手动指定依赖到VPet目录下`VPet-Simulator.Core.dll`, `VPet-Simulator.Windows.Interface.dll`实例.
 
-```
-git clone https://github.com/gottyduke/BG3_PluginTemplate.git
-cd BG3_PluginTemplate
-git submodule init
-git submodule update
-.\build-release.ps1
-```
 
 ## 许可
 
 [MIT](LICENSE)
 
+
 ## 鸣谢
 
-- [Kassent的NativeModLoader](https://www.nexusmods.com/divinityoriginalsin2/mods/210?tab=description)([GitHub](https://github.com/kassent/DLLPluginLoader))
-- [Ryan的commonLibSSE代码](https://github.com/Ryan-rsm-McKenzie/CommonLibSSE)
+- [虚拟桌宠模拟器](https://github.com/LorisYounger/VPet)
+
+
+---
+
+
+# VPet.Plugin.DiscordRPC
+ Enables discord rich presence for [VPet](https://github.com/LorisYounger/VPet) .
+
+
+## Animation copyright notice and authorization terms
+
+The copyright of the [pet animation files](./VPet-Simulator.Windows/mod/0000_core/pet/vup) provided in the source code belongs to [the VUP-Simulator team](https://www.exlb.net/VUP-Simulator). This plugin uses sliced sprites that inherit and sustain the above license.
+
+
+## Requirement
+- [Visual Studio Community 2022](https://visualstudio.microsoft.com/)
+  - Desktop application development with .Net framework/CSharp.
+
+
+## Building
+This plugin has removed the nuget reference of [VPet_Simulator.Core](https://github.com/LorisYounger/VPet/tree/main/VPet-Simulator.Core) because it's severely lacking behind on updates. You need to manually add reference to `VPet-Simulator.Core.dll`, `VPet-Simulator.Windows.Interface.dll` in VPet instance path.
+
+
+## LICENSE
+
+[MIT](LICENSE)
+
+
+## Credits
+
+- [VPet Simulator](https://github.com/LorisYounger/VPet)
+
