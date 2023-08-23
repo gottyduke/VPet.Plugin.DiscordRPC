@@ -3,8 +3,10 @@
 
 
 ## 示例
-![slacking](static/assets/slacking.png)
 ![idling](static/assets/idling.png)
+![gaming](static/assets/gaming.png)
+![napping](static/assets/napping.png)
+![learning](static/assets/learning.png)
 > Supports English locale.
 
 
