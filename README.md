@@ -5,7 +5,6 @@
 ## 示例
 ![slacking](static/assets/slacking.png)
 ![idling](static/assets/idling.png)
-![cosmos](static/assets/cosmos.png)
 > Supports English locale.
 
 
