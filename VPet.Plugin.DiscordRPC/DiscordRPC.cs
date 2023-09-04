@@ -2,20 +2,15 @@
 //#define LOCALIZE_INPLACE
 
 
-using DiscordRPC.Logging;
 using DiscordRPC;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VPet_Simulator.Windows.Interface;
-using System.Threading;
-using LinePutScript.Localization.WPF;
-using System.IO;
-using System.Diagnostics;
-using System.Reflection;
 using LinePutScript.Dictionary;
+using LinePutScript.Localization.WPF;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using VPet_Simulator.Windows.Interface;
 
 namespace VPet.Plugin.DiscordRPC
 {
@@ -62,7 +57,9 @@ namespace VPet.Plugin.DiscordRPC
         {
             // use enum type name + int repr. because VPet.Core has all "normal" misspelled!!!!!!!!
             var state = string.Format("WorkingState{0}", (int)MW.Main.State).Translate();
+
             _RichPresence.Assets.LargeImageKey = _ImageKey[(int)MW.Main.State];
+            _RichPresence.Timestamps.End = null;
 
             var work = "";
             if (MW.Main.State == VPet_Simulator.Core.Main.WorkingState.Work ||
@@ -71,9 +68,7 @@ namespace VPet.Plugin.DiscordRPC
                 _RichPresence.Assets.LargeImageKey = _WorkImageKey[(int)MW.Main.nowWork.Type];
 
                 TimeSpan elapsed = DateTime.Now - MW.Main.WorkTimer.StartTime;
-                _RichPresence.Timestamps = new Timestamps {
-                    End = DateTime.UtcNow.AddSeconds((TimeSpan.FromMinutes(MW.Main.nowWork.Time) - elapsed).TotalSeconds)
-                };
+                _RichPresence.Timestamps.End = DateTime.UtcNow.AddSeconds((TimeSpan.FromMinutes(MW.Main.nowWork.Time) - elapsed).TotalSeconds);
             }
             work = string.IsNullOrEmpty(work) ? "WorkDesc0".Translate() : work;
 
@@ -102,6 +97,7 @@ namespace VPet.Plugin.DiscordRPC
                     LargeImageKey = "vpet_icon_default",
                     LargeImageText = MW.Main.Core.Save.Name,
                 },
+                Timestamps = new Timestamps(),
             };
         }
 
